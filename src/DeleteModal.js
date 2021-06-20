@@ -7,7 +7,7 @@ const DeleteModal = (props) => {
 
     const toggle = () => setModal(!modal);
 
-    let [confirmValue, setInputValue] = useState('');
+    let [confirmValue, setConfirmValue] = useState('');
 
 
     return (
@@ -21,7 +21,7 @@ const DeleteModal = (props) => {
             <br/>
             Please type <b>{props.task.name}</b> to confirm
   <input type="text" className="form-control" placeholder="Enter here"
-         aria-label="Recipient's username with two button addons" onChange={event => setInputValue(event.target.value)}/>
+         aria-label="Recipient's username with two button addons" onChange={event => setConfirmValue(event.target.value)}/>
         </ModalBody>
         <ModalFooter>
             <button className="btn btn-outline-danger" type="button"
