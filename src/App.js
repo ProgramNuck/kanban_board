@@ -5,9 +5,7 @@ import Column from "./Column";
 import AddTaskModal from "./AddTaskModal";
 
 function App() {
-
     let [list, setList] = useState([]);
-
     let [statuses, setStatuses] = useState([]);
 
     const getList = () => {

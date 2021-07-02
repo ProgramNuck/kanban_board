@@ -41,7 +41,7 @@ const Task = (props) => {
                 <br/>
                 Priority: {task.priority}
                 {' '}
-                {task.priority < 5 &&
+                {task.priority < 10 &&
                 <button onClick={() => changePriorityButton(task, 1)} className="btn btn-outline-secondary">↑</button>}
                 {' '}
                 {task.priority > 1 &&

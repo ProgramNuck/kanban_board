@@ -3,6 +3,8 @@ import {useState} from 'react';
 
 const DeleteModal = (props) => {
 
+   let {task} = props;
+
     const [modal, setModal] = useState(false);
 
     const toggle = () => setModal(!modal);
@@ -16,17 +18,17 @@ const DeleteModal = (props) => {
     <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader>Are you sure you want to delete this task?</ModalHeader>
         <ModalBody>
-            This action <b>cannot</b> be undone. This will <b>permanently</b> delete the {props.task.name} task.
+            This action <b>cannot</b> be undone. This will <b>permanently</b> delete the {task.name} task.
             <br/>
             <br/>
-            Please type <b>{props.task.name}</b> to confirm
+            Please type <b>{task.name}</b> to confirm
   <input type="text" className="form-control" placeholder="Enter here"
          aria-label="Recipient's username with two button addons" onChange={event => setConfirmValue(event.target.value)}/>
         </ModalBody>
         <ModalFooter>
             <button className="btn btn-outline-danger" type="button"
-                    disabled={confirmValue !== props.task.name}
-                    onClick={() => props.deleteButton(props.task._id)}>Confirm
+                    disabled={confirmValue !== task.name}
+                    onClick={() => props.deleteButton(task._id)}>Confirm
             </button>
             {' '}
             <button className="btn btn-outline-secondary" type="button" onClick={toggle}>Cancel</button>
